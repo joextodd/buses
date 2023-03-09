@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Tuner</title>
+    <meta name="description" content="BusTimes">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="data:image/x-icon;" type="image/x-icon">
+    <link rel="stylesheet" href="./index.css">
+
+    <!-- Uncomment for development -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <!-- Uncomment for production -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.0"></script>
+</head>
+
+<body>
+    <main id="app">
+        <div class="bus">
+            <h1>158</h1>
+            <h3>to Blackhorse Road</h3>
+            <p>{{ buses.BHR158 }}</p>
+        </div>
+        <div class="bus">
+            <h1>58</h1>
+            <h3>to Walthamstow</h3>
+            <p>{{ buses.BHR58 }}</p>
+        </div>
+        <div class="bus">
+            <h1>158</h1>
+            <h3>to Stratford</h3>
+            <p>{{ buses.STR158 }}</p>
+        </div>
+        <div class="bus">
+            <h1>58</h1>
+            <h3>to Stratford</h3>
+            <p>{{ buses.STR58 }}</p>
+        </div>
+    </main>
+
+    <script type="module" src="./app.js"></script>
+    <!-- <script type="module" src="./dist/app.js"></script> -->
+</body>
+
+</html>
