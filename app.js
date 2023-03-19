@@ -5,6 +5,13 @@
  *
  *----------------------------------------------------------------------------*/
 
+const handleFetchError = response => {
+  if (!response.ok) {
+    throw Error(response.statusText);
+  }
+  return response;
+}
+
 // App
 let app = new Vue({
   el: '#app',
@@ -45,11 +52,12 @@ let app = new Vue({
     getBusData: async function() {
       for (const [id, endpoint] of Object.entries(this.endpoints)) {
         fetch(`https://api.tfl.gov.uk/Line/${endpoint}`)
+        .then(response => handleFetchError(response))
         .then(response => response.json())
         .then(data => {
-          console.log(data)
           Vue.set(app.data, id, data);
-        });
+        })
+        .catch(error => console.error(error));
       }
     },
   },
