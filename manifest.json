@@ -1,0 +1,23 @@
+{
+    "short_name": "BusTimes",
+    "name": "BusTimes",
+    "icons": [
+        {
+            "src": "/images/bus-stop-sm.png",
+            "type": "image/png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "/images/bus-stop.png",
+            "type": "image/png",
+            "sizes": "512x512"
+        }
+    ],
+    "id": "/",
+    "start_url": "/",
+    "background_color": "#e13d14",
+    "orientation": "landscape",
+    "display": "fullscreen",
+    "theme_color": "#de1b1b",
+    "description": "BusTimes: at Bevan Court"
+}

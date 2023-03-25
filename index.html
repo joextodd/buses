@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <title>BusTimes</title>
     <meta name="description" content="BusTimes">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="shortcut icon" href="data:image/x-icon;" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <link rel="stylesheet" href="./index.css">
+    <link rel=”manifest” href="./manifest.json">
 
     <!-- Uncomment for development -->
     <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
@@ -40,6 +40,19 @@
     </main>
 
     <script type="module" src="./app.js"></script>
+    <script>
+        let elem = document.getElementById("app")
+        elem.onclick = function () {
+            elem.requestFullscreen({ navigationUI: "show" })
+                .then(() => { })
+                .catch((err) => {
+                    alert(
+                        `An error occurred while trying to switch into fullscreen mode: ${err.message} (${err.name})`
+                    );
+                });
+        }
+
+    </script>
     <!-- <script type="module" src="./dist/app.js"></script> -->
 </body>
 

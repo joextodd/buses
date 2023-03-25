@@ -1,5 +1,4 @@
 html {
-    font-size: 16px;
     font-family: sans-serif;
     background: white;
     background-color: #212121;
@@ -19,10 +18,6 @@ noscript {
     height: 100vh;
     height: calc(var(--vh, 1vh) * 100);
     font-family: Helvetica Neue, sans-serif;
-    color: #00caff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     transition: background 0.5s;
 }
 
@@ -31,16 +26,8 @@ main {
     height: 100vh;
     display: flex;
     align-items: stretch;
-    justify-content: stretch;
+    justify-content: center;
     flex-wrap: wrap;
-}
-
-.note {
-    font-size: 7.5rem;
-}
-
-h1 {
-    font-size: 10rem;
 }
 
 h1,
@@ -50,12 +37,16 @@ p {
     margin: 1rem;
 }
 
-p {
-    font-size: 3rem;
+h1 {
+    font-size: 15vh;
 }
 
-span {
-    margin: 1rem;
+h3 {
+    font-size: 2vh;
+}
+
+p {
+    font-size: 7vh;
 }
 
 input,

@@ -25,6 +25,8 @@ let app = new Vue({
       'STR158': '158/Arrivals/490007246S?direction=outbound',  // towards Stratford
       'STR58': '58/Arrivals/490007246S?direction=inbound',     // towards Stratford
     },
+    timer: 0,
+    refreshTimer: 0,
   },
   methods: {
     startTimer: function() {
@@ -52,20 +54,24 @@ let app = new Vue({
     getBusData: async function() {
       for (const [id, endpoint] of Object.entries(this.endpoints)) {
         fetch(`https://api.tfl.gov.uk/Line/${endpoint}`)
-        .then(response => handleFetchError(response))
+        .then(handleFetchError)
         .then(response => response.json())
         .then(data => {
           Vue.set(app.data, id, data);
         })
-        .catch(error => console.error(error));
+        .catch(console.error);
       }
     },
   },
   beforeMount() {
     this.getBusData()
     this.startTimer()
+    this.refreshTimer = setInterval(() => {
+      this.$forceUpdate();
+    }, 60 * 60 * 1000);
   },
   beforeDestroy() {
     clearInterval(this.timer)
+    clearInterval(this.refreshTimer);
   }
 });
